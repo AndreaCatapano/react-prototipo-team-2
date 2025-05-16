@@ -17,21 +17,21 @@ export default function HomePage() {
             <a href="#" className="btn btn-primary">Travel Details</a>
 
             <h2>Version 1</h2>
-            <div className="row row-cols-3 g-3">
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
                 {travelDataDemo.map(travel => <TravelCardV1 key={travel.id} data={travel} />)}
             </div>
 
             <hr />
             <h2>Version 2</h2>
 
-            <div className="row row-cols-3 g-3">
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
                 {travelDataDemo.map(travel => <TravelCardV2 key={travel.id} data={travel} />)}
             </div>
 
             <hr />
             <h2>Version 3</h2>
 
-            <div className="row row-cols-3 g-3">
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
                 {travelDataDemo.map(travel => <TravelCardV3 key={travel.id} data={travel} />)}
             </div>
 
