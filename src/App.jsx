@@ -1,12 +1,8 @@
-import HomePage from "./pages/HomePage"
+import AppRouter from "./Router";
 
+// Punto d'ingresso dell'app
 function App() {
-
-  return (
-    <>
-      <HomePage />
-    </>
-  )
+  return <AppRouter />;
 }
 
-export default App
+export default App;
