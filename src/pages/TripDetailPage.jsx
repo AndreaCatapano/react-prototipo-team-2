@@ -24,8 +24,8 @@ function TripDetailPage() {
           Hai selezionato il viaggio con ID: <strong>{id}</strong>
         </p>
 
-        <section class="container text-center">
-          <div class="row row-cols-3 g-3">
+        <section className="container text-center">
+          <div className="row row-cols-3 g-3">
             {tripUsers.map(user => <UserCard user={user} />)}
           </div>
         </section>
