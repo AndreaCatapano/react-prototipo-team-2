@@ -1,7 +1,7 @@
 import TravelCardV1 from "../components/TravelCardV1";
 import TravelCardV2 from "../components/TravelCardV2";
 import TravelCardV3 from "../components/TravelCardV3";
-import { travelDataDemo } from "../data/travelDataDemo";
+import travelDataDemo from "../data/travelDataDemo.js";
 
 // Pagina principale con elenco dei viaggi in tre versioni
 function HomePage() {
