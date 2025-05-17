@@ -9,7 +9,7 @@ function UserDetailPage({ }) {
   const user = userDataDemo.filter(user => user.id == id)
 
   // user destructure
-  const { firstName, lastName, phone, email, fiscalCode } = user[0]
+  const { firstName, lastName, phone, email, fiscalCode, tripId } = user[0]
 
   return (
     <div className="container py-4">
@@ -22,6 +22,10 @@ function UserDetailPage({ }) {
 
       <Link to="/" className="btn btn-secondary mt-3">
         Torna alla homepage
+      </Link>
+
+      <Link to={`/trips/${tripId}`} className="btn btn-secondary mt-3">
+        Torna alla scheda del viaggio
       </Link>
     </div>
   );
