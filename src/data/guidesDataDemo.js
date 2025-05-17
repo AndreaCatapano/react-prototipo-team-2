@@ -1,4 +1,4 @@
-export const guides = [
+const guides = [
   {
     id: 1,
     firstName: "Mario",
@@ -42,9 +42,11 @@ export const guides = [
   {
     id: 6,
     firstName: "Paola",
-    lastName: "neri",
+    lastName: "Neri",
     email: "paolo.neri@example.com",
     phone: "+39 358 277746",
     tripId: 6,
   },
 ];
+
+export default guides;
