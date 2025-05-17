@@ -2,9 +2,15 @@ import { useParams, Link } from "react-router-dom";
 
 import { TourOperatorCard } from "../components/TourOperatorCard.jsx";
 
+import userDataDemo from "../data/userDataDemo"
+import UserCard from "../components/UserCard.jsx";
+
 // Pagina di dettaglio viaggio
 function TripDetailPage() {
   const { id } = useParams();
+
+  // filteriing user by id
+  const tripUsers = userDataDemo.filter(user => user.tripId == id)
 
   return (
     <>
@@ -17,6 +23,13 @@ function TripDetailPage() {
         <p>
           Hai selezionato il viaggio con ID: <strong>{id}</strong>
         </p>
+
+        <section class="container text-center">
+          <div class="row row-cols-3 g-3">
+            {tripUsers.map(user => <UserCard user={user} />)}
+          </div>
+        </section>
+
         <Link to="/" className="btn btn-secondary mt-3">
           Torna alla homepage
         </Link>
