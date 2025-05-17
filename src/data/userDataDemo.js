@@ -1,4 +1,4 @@
-export const demoUsers = [
+const demoUsers = [
   {
     id: 1,
     firstName: "Stefano",
@@ -810,3 +810,5 @@ export const demoUsers = [
     tripId: 6,
   },
 ];
+
+export default demoUsers
