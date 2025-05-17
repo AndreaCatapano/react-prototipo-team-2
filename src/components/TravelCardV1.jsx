@@ -24,11 +24,6 @@ function TravelCardV1({ data }) {
               <Link to={`/trips/${data.id}`} className="btn btn-primary me-2">
                 Vedi viaggio
               </Link>
-
-              {/* Link al dettaglio guida */}
-              <Link to={`/guides/${data.id}`} className="btn btn-outline-secondary">
-                Guida
-              </Link>
             </div>
           </div>
         </div>
