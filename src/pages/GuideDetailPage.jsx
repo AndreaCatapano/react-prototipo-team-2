@@ -46,7 +46,7 @@ function GuideDetailPage() {
         <p>Guida con ID: {id} non trovata</p>
       )}
 
-      <Link to="/trips/:id" className="btn btn-secondary mt-3">
+      <Link to={`/trips/${id}`} className="btn btn-secondary mt-3">
         Torna ai dettagli del viaggio
       </Link>
     </div>
