@@ -25,7 +25,7 @@ function TripDetailPage() {
         </p>
 
         <section className="container text-center">
-          <div className="row row-cols-3 g-3">
+          <div className="row g-3">
             {tripUsers.map(user => <UserCard user={user} />)}
           </div>
         </section>
