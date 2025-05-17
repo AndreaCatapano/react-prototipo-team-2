@@ -12,19 +12,15 @@ function UserDetailPage({ }) {
   const { firstName, lastName, phone, email, fiscalCode, tripId } = user[0]
 
   return (
-    <div className="container py-4">
+    <div className="container py-4 mb-3">
       <h1>{firstName} {lastName}</h1>
-      <ul>
-        <li><strong>Phone number: {phone}</strong></li>
-        <li><strong>Email: {email}</strong></li>
-        <li><strong>ID code: {fiscalCode}</strong></li>
+      <ul className="list-unstyled">
+        <li className="p-2"><strong>Phone number:</strong> {phone}</li>
+        <li className="p-2"><strong>Email:</strong> {email}</li>
+        <li className="p-2"><strong>ID code:</strong> {fiscalCode}</li>
       </ul>
 
-      <Link to="/" className="btn btn-secondary mt-3">
-        Torna alla homepage
-      </Link>
-
-      <Link to={`/trips/${tripId}`} className="btn btn-secondary mt-3">
+      <Link to={`/trips/${tripId}`} className="btn btn-secondary">
         Torna alla scheda del viaggio
       </Link>
     </div>
