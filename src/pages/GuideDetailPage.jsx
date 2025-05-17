@@ -9,7 +9,9 @@ function GuideDetailPage() {
 
   useEffect(() => {
     // Cerca la guida con l'ID corrispondente nei dati di esempio
-    const foundGuide = guidesDataDemo.find(guide => guide.id === parseInt(id));
+    const foundGuide = guidesDataDemo.find(
+      (guide) => guide.id === parseInt(id)
+    );
     if (foundGuide) {
       setGuide(foundGuide);
     }
@@ -18,22 +20,34 @@ function GuideDetailPage() {
   return (
     <div className="container py-4">
       <h1>Dettaglio guida</h1>
-      
+
       {guide ? (
         <div>
-          <p><strong>ID:</strong> {guide.id}</p>
-          <p><strong>Nome:</strong> {guide.firstName}</p>
-          <p><strong>Cognome:</strong> {guide.lastName}</p>
-          <p><strong>Email:</strong> {guide.email}</p>
-          <p><strong>Telefono:</strong> {guide.phone}</p>
-          <p><strong>ID Viaggio:</strong> {guide.tripId}</p>
+          <p>
+            <strong>ID:</strong> {guide.id}
+          </p>
+          <p>
+            <strong>Nome:</strong> {guide.firstName}
+          </p>
+          <p>
+            <strong>Cognome:</strong> {guide.lastName}
+          </p>
+          <p>
+            <strong>Email:</strong> {guide.email}
+          </p>
+          <p>
+            <strong>Telefono:</strong> {guide.phone}
+          </p>
+          <p>
+            <strong>ID Viaggio:</strong> {guide.tripId}
+          </p>
         </div>
       ) : (
         <p>Guida con ID: {id} non trovata</p>
       )}
 
-      <Link to="/" className="btn btn-secondary mt-3">
-        Torna alla homepage
+      <Link to="/trips/:id" className="btn btn-secondary mt-3">
+        Torna ai dettagli del viaggio
       </Link>
     </div>
   );
