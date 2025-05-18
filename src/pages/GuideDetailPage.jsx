@@ -50,7 +50,7 @@ function GuideDetailPage() {
               <span className="guide-value">{guide.phone}</span>
             </div>
             <div className="guide-info-item">
-              <span className="guide-label">ID Viaggio:</span>
+              <span className="guide-label">Viaggio:</span>
               <span className="guide-value">
                 {travel ? travel.packageName : "Nessun viaggio associato"}
               </span>
