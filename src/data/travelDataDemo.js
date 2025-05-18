@@ -7,6 +7,7 @@ const travelDataDemo = [
     departure: "20/05/2025",
     return: "27/05/2025",
     guide: "Mario Rossi",
+    image: "road-to-naples.jpg",
     numberOfParticipants: 15,
   },
   {
@@ -17,6 +18,7 @@ const travelDataDemo = [
     departure: "17/05/2025",
     return: "27/05/2025",
     guide: "Lucia Bianchi",
+    image: "discover-sicily.jpg",
     numberOfParticipants: 15,
   },
   {
@@ -27,6 +29,7 @@ const travelDataDemo = [
     departure: "21/05/2025",
     return: "28/05/2025",
     guide: "Giovanni Verdi",
+    image: "venetian-escape.jpg",
     numberOfParticipants: 15,
   },
   {
@@ -37,6 +40,7 @@ const travelDataDemo = [
     departure: "13/05/2025",
     return: "19/05/2025",
     guide: "Anna Neri",
+    image: "florence-art-tour.jpg",
     numberOfParticipants: 15,
   },
   {
@@ -47,6 +51,7 @@ const travelDataDemo = [
     departure: "15/06/2025",
     return: "21/06/2025",
     guide: "Francesca Moretti",
+    image: "milan-shopping-week.jpg",
     numberOfParticipants: 15,
   },
   {
@@ -57,6 +62,7 @@ const travelDataDemo = [
     departure: "03/01/2025",
     return: "10/01/2025",
     guide: "Alessandro Russo",
+    image: "rome-historical-walks.jpg",
     numberOfParticipants: 15,
   },
 ];
