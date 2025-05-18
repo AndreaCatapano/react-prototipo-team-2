@@ -23,3 +23,12 @@
 .underline-hover:hover::after {
   width: 100%;
 }
+
+/* travel card */
+
+.img-size {
+
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+}
