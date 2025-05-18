@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function TravelCard({ data }) {
 
     return <>
@@ -9,6 +11,11 @@ export default function TravelCard({ data }) {
                     <p className="card-text">Destination: {data.destination}</p>
                     <p className="card-text">Departure: {data.departure}</p>
                     <p className="card-text">Return: {data.return}</p>
+
+                    {/* Link al dettaglio viaggio */}
+                    <Link to={`/trips/${data.id}`} className="btn btn-primary me-2">
+                        Vedi viaggio
+                    </Link>
                 </div>
             </div>
         </div>
