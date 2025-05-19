@@ -3,13 +3,11 @@ import { useEffect, useState } from "react";
 
 import { TourOperatorCard } from "../components/TourOperatorCard.jsx";
 import AccordionTrip from "../components/AccordionTrip.jsx";
-<<<<<<< HEAD
-import "../style/TravelDetailPage.css"
-=======
 import UserCard from "../components/UserCard.jsx";
 
 import userDataDemo from "../data/userDataDemo";
 import travelDataDemo from "../data/travelDataDemo";
+import "../style/TravelDetailPage.css"; // ✅ Nome corretto del file CSS
 
 // Funzione per determinare lo stato del viaggio
 function getTripStatus(departure, returnDate) {
@@ -24,7 +22,6 @@ function getTripStatus(departure, returnDate) {
   if (start > today) return "In Programma";
   return "In Corso";
 }
->>>>>>> refactory-HomePage-Travels-and-add-status-travels
 
 function TripDetailPage() {
   const { id } = useParams();
@@ -37,10 +34,6 @@ function TripDetailPage() {
     let filteredUser = user;
 
     if (userSearch !== '') {
-<<<<<<< HEAD
-
-=======
->>>>>>> refactory-HomePage-Travels-and-add-status-travels
       filteredUser = filteredUser.filter(user =>
         user.firstName.toLowerCase().includes(userSearch.toLowerCase()) ||
         user.lastName.toLowerCase().includes(userSearch.toLowerCase())
@@ -77,19 +70,11 @@ function TripDetailPage() {
         {/* Badge stato viaggio */}
         {status && (
           <div className="text-end mb-4">
-            <span className={`badge ${badgeClass} fs-6 px-3 py-2 d-inline-flex align-items-center gap-2`}>
-              {status === "In Corso" && <i className="bi bi-check-circle-fill"></i>}
-              {status === "Terminato" && <i className="bi bi-x-circle-fill"></i>}
-              {status === "In Programma" && <i className="bi bi-clock-fill"></i>}
+            <span className={`badge ${badgeClass} fs-6 px-3 py-2`}>
               {status}
             </span>
           </div>
         )}
-
-<<<<<<< HEAD
-        <AccordionTrip dataId={id} />
-=======
->>>>>>> refactory-HomePage-Travels-and-add-status-travels
 
         <h2 className="text-center mb-4">Partecipanti</h2>
 
@@ -104,15 +89,10 @@ function TripDetailPage() {
         </div>
 
         <section className="container text-center">
-<<<<<<< HEAD
-          <div className="row g-3">
-            {tripUsers.map(user => <UserCard key={user.id} user={user} />)}
-=======
           <div className="row row-cols-3 g-3">
             {tripUsers.map(user => (
               <UserCard key={user.id} user={user} />
             ))}
->>>>>>> refactory-HomePage-Travels-and-add-status-travels
           </div>
         </section>
 

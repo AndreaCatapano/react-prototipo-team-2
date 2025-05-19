@@ -12,7 +12,7 @@ export default function ContactsPage() {
   };
 
   return (
-    <div className="container py-5">
+    <div className="container min-vh-100 py-5">
       <h1 className="text-center mb-4">Contattaci</h1>
 
       {/* Contatti aziendali */}

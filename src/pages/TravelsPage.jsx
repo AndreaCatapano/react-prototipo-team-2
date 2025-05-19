@@ -43,7 +43,7 @@ export default function TravelsPage() {
     .sort((a, b) => parseDate(a.departure) - parseDate(b.departure));
 
   return (
-    <div className="container-fluid p-4 bg-secondary">
+    <div className="container-fluid p-4 bg-secondary min-vh-100">
       <h1 className="text-center text-light mb-5">Our Travel List</h1>
 
       <div className="container">
