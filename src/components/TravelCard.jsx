@@ -9,7 +9,7 @@ export default function TravelCard({ data }) {
           <div className="travel-card">
             <div className="travel-card-image-container ratio ratio-16x9">
               <img
-                src={`../../public/${data.image}`}
+                src={`../../public/img/${data.image}`}
                 className="travel-card-image"
                 alt={data.packageName}
               />
