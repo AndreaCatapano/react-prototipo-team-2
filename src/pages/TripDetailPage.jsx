@@ -5,6 +5,7 @@ import { TourOperatorCard } from "../components/TourOperatorCard.jsx";
 import userDataDemo from "../data/userDataDemo"
 import UserCard from "../components/UserCard.jsx";
 import { useEffect, useState } from "react";
+import AccordionTrip from "../components/AccordionTrip.jsx";
 
 // Pagina di dettaglio viaggio
 function TripDetailPage() {
@@ -40,16 +41,14 @@ function TripDetailPage() {
       </section>
 
       <div className="container py-4">
-        <h1>Dettaglio viaggio</h1>
-        <p>
-          Hai selezionato il viaggio con ID: <strong>{id}</strong>
-        </p>
 
-        <div className="row mb-4">
-          <input className="form-control me-2" type="search" placeholder="Search User" value={userSearch} onChange={e => setuserSearch(e.target.value)} />
+        <AccordionTrip dataId={id} />
+
+        <h2 className="text-center mb-4">Partecipanti</h2>
+
+        <div className="container">
+          <input className="form-control me-2 mb-4" type="search" placeholder="Search User" value={userSearch} onChange={e => setuserSearch(e.target.value)} />
         </div>
-
-
         <section className="container text-center">
           <div className="row g-3">
             {tripUsers.map(user => <UserCard key={user.id} user={user} />)}
