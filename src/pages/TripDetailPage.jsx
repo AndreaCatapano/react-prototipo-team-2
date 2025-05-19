@@ -6,6 +6,7 @@ import userDataDemo from "../data/userDataDemo"
 import UserCard from "../components/UserCard.jsx";
 import { useEffect, useState } from "react";
 import AccordionTrip from "../components/AccordionTrip.jsx";
+import "../style/TravelDetailPage.css"
 
 // Pagina di dettaglio viaggio
 function TripDetailPage() {

@@ -8,7 +8,7 @@ function UserCard({ user }) {
       <div className="d-grid p-3">
         <Link
           to={`/users/${user.id}`}
-          className="general-btn btn p-3"
+          className="general-btn p-3 text-decoration-none"
         >
           <h3>{user.firstName} {user.lastName}</h3>
         </Link>
