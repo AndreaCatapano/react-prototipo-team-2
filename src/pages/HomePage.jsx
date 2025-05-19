@@ -5,12 +5,14 @@ import travelDataDemo from "../data/travelDataDemo.js";
 function HomePage() {
   return (
     <div className="container-fluid p-4 bg-secondary">
-      <h1 className="text-center">Our Travel List</h1>
+      <h1 className="text-center mb-5">Our Travel List</h1>
 
-      <div className="row g-3">
-        {travelDataDemo.map((travel) => (
-          <TravelCard key={travel.id} data={travel} />
-        ))}
+      <div className="container">
+        <div className="row g-3">
+          {travelDataDemo.map((travel) => (
+            <TravelCard key={travel.id} data={travel} />
+          ))}
+        </div>
       </div>
     </div>
   );

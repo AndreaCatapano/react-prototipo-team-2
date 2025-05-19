@@ -1,28 +1,32 @@
 import { useParams, Link } from "react-router-dom";
-import userDataDemo from "../data/userDataDemo"
+import userDataDemo from "../data/userDataDemo";
 
 // Pagina di dettaglio utente
-function UserDetailPage({ }) {
+function UserDetailPage({}) {
   const { id } = useParams();
 
   // filteriing user by id
-  const user = userDataDemo.filter(user => user.id == id)
+  const user = userDataDemo.filter((user) => user.id == id);
 
   // user destructure
-  const { firstName, lastName, phone, email, fiscalCode, tripId } = user[0]
+  const { firstName, lastName, phone, email, fiscalCode, tripId } = user[0];
 
   return (
     <div className="container py-4">
-      <h1>{firstName} {lastName}</h1>
+      <h1>
+        {firstName} {lastName}
+      </h1>
       <ul>
-        <li><strong>Phone number: {phone}</strong></li>
-        <li><strong>Email: {email}</strong></li>
-        <li><strong>ID code: {fiscalCode}</strong></li>
+        <li>
+          <strong>Phone number: {phone}</strong>
+        </li>
+        <li>
+          <strong>Email: {email}</strong>
+        </li>
+        <li>
+          <strong>ID code: {fiscalCode}</strong>
+        </li>
       </ul>
-
-      <Link to="/" className="btn btn-secondary mt-3">
-        Torna alla homepage
-      </Link>
 
       <Link to={`/trips/${tripId}`} className="btn btn-secondary mt-3">
         Torna alla scheda del viaggio
