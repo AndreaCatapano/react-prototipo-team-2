@@ -12,26 +12,23 @@ function TripDetailPage() {
 
   const [user, setUser] = useState(userDataDemo);
   const [findUser, setFindUser] = useState(user);
-  const [firstNameSearchUser, setFirstNameSearchUser] = useState('');
-  const [lastNameSearchUser, setLastNameSearchUser] = useState('');
+  const [userSearch, setuserSearch] = useState('');
 
   useEffect(() => {
 
     let filteredUser = user;
 
-    if (firstNameSearchUser !== '') {
+    if (userSearch !== '') {
 
-      filteredUser = filteredUser.filter(user => user.firstName.toLowerCase().includes(firstNameSearchUser.toLowerCase()));
-    }
-
-    if (lastNameSearchUser !== '') {
-
-      filteredUser = filteredUser.filter(user => user.lastName.toLowerCase().includes(lastNameSearchUser.toLowerCase()));
+      filteredUser = filteredUser.filter(user =>
+        user.firstName.toLowerCase().includes(userSearch.toLowerCase()) ||
+        user.lastName.toLowerCase().includes(userSearch.toLowerCase())
+      )
     }
 
     setFindUser(filteredUser);
 
-  }, [firstNameSearchUser, lastNameSearchUser]);
+  }, [userSearch]);
 
   // filtering user by id
   const tripUsers = findUser.filter(user => user.tripId == id);
@@ -48,14 +45,10 @@ function TripDetailPage() {
           Hai selezionato il viaggio con ID: <strong>{id}</strong>
         </p>
 
-        <div className="row row-cols-2 mb-4">
-          <div className="col">
-            <input className="form-control me-2" type="search" placeholder="Search By First Name" value={firstNameSearchUser} onChange={e => setFirstNameSearchUser(e.target.value)} />
-          </div>
-          <div className="col">
-            <input className="form-control me-2" type="search" placeholder="Search By Last Name" value={lastNameSearchUser} onChange={e => setLastNameSearchUser(e.target.value)} />
-          </div>
+        <div className="row mb-4">
+          <input className="form-control me-2" type="search" placeholder="Search User" value={userSearch} onChange={e => setuserSearch(e.target.value)} />
         </div>
+
 
         <section className="container text-center">
           <div className="row g-3">

@@ -31,7 +31,7 @@ function GuideDetailPage() {
   return (
     <div className="container py-5">
       <div className="guide-detail-container">
-        <h1 className="guide-title">Dettaglio Guida</h1>
+        <h1 className="guide-title">Dettaglio Operatore</h1>
 
         {guide ? (
           <div className="guide-info-card">

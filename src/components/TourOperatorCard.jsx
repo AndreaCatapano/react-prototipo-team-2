@@ -6,9 +6,9 @@ export function TourOperatorCard({ tripId }) {
       <div className="d-grid gap-2">
         <Link
           to={`/guides/${tripId}`}
-          className="btn btn-outline-secondary btn-lg"
+          className="card btn btn btn-light shadow-sm p-3"
         >
-          Guida
+          <h3>Operatore</h3>
         </Link>
       </div>
     </div>
