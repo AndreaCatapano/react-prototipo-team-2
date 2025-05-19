@@ -12,16 +12,16 @@ function HomePage() {
   };
 
   return (
-    <div className="home-container page-transition">
+    <div className="home-container">
       <div className="container">
-        <h1 className="home-title text-center">I Nostri Viaggi</h1>
+        <h1 className="home-title text-center">Our Travel List</h1>
 
         <div className="travel-content">
           <TravelFilters onFilterChange={handleFilterChange} />
 
-          <div className="row g-3 mt-4">
+          <div className="row g-3 travel-grid">
             {travelDataDemo.map((travel) => (
-              <div className="col-12 col-md-6 col-lg-4" key={travel.id}>
+              <div className="col-12 col-sm-6 col-lg-4" key={travel.id}>
                 <TravelCard data={travel} />
               </div>
             ))}
