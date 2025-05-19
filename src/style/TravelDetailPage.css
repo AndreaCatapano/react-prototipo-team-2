@@ -1,0 +1,16 @@
+.general-btn {
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f8f9fa;
+  color: #495057;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.general-btn:hover {
+  background-color: #e9ecef;
+  transform: translateY(-2px);
+}
