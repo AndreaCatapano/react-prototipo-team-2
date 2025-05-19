@@ -811,4 +811,4 @@ const demoUsers = [
   },
 ];
 
-export default demoUsers
+export default demoUsers;
