@@ -2,13 +2,21 @@ import { useParams, Link } from "react-router-dom";
 import userDataDemo from "../data/userDataDemo";
 
 // Pagina di dettaglio utente
-function UserDetailPage({}) {
+function UserDetailPage() {
   const { id } = useParams();
 
-  // filteriing user by id
+  // Filtering user by id
   const user = userDataDemo.filter((user) => user.id == id);
 
-  // user destructure
+  if (!user.length) {
+    return (
+      <div className="container py-4">
+        <h2>Utente non trovato</h2>
+      </div>
+    );
+  }
+
+  // User destructuring
   const { firstName, lastName, phone, email, fiscalCode, tripId } = user[0];
 
   return (
@@ -16,15 +24,34 @@ function UserDetailPage({}) {
       <h1>
         {firstName} {lastName}
       </h1>
-      <ul>
-        <li>
-          <strong>Phone number: {phone}</strong>
+
+      <ul className="list-unstyled mt-3">
+        <li className="mb-2">
+          <strong>
+            <i className="bi bi-telephone-fill me-2"></i>
+            Telefono:
+          </strong>{" "}
+          <a href={`tel:${phone}`} className="text-decoration-none">
+            {phone}
+          </a>
         </li>
-        <li>
-          <strong>Email: {email}</strong>
+
+        <li className="mb-2">
+          <strong>
+            <i className="bi bi-envelope-fill me-2"></i>
+            Email:
+          </strong>{" "}
+          <a href={`mailto:${email}`} className="text-decoration-none">
+            {email}
+          </a>
         </li>
-        <li>
-          <strong>ID code: {fiscalCode}</strong>
+
+        <li className="mb-2">
+          <strong>
+            <i className="bi bi-person-vcard me-2"></i>
+            Codice fiscale:
+          </strong>{" "}
+          {fiscalCode}
         </li>
       </ul>
 
