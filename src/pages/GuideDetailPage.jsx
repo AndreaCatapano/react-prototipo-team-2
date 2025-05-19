@@ -36,21 +36,41 @@ function GuideDetailPage() {
         {guide ? (
           <div className="guide-info-card">
             <div className="guide-info-item">
-              <span className="guide-label">Nome:</span>
+              <span className="guide-label">
+                <i className="bi bi-person-fill me-2"></i>
+                Nome:
+              </span>
               <span className="guide-value">
                 {guide.firstName} {guide.lastName}
               </span>
             </div>
             <div className="guide-info-item">
-              <span className="guide-label">Email:</span>
-              <span className="guide-value">{guide.email}</span>
+              <span className="guide-label">
+                <i className="bi bi-envelope-fill me-2"></i>
+                Email:
+              </span>
+              <span className="guide-value">
+                <a href={`mailto:${guide.email}`} className="text-decoration-none">
+                  {guide.email}
+                </a>
+              </span>
             </div>
             <div className="guide-info-item">
-              <span className="guide-label">Telefono:</span>
-              <span className="guide-value">{guide.phone}</span>
+              <span className="guide-label">
+                <i className="bi bi-telephone-fill me-2"></i>
+                Telefono:
+              </span>
+              <span className="guide-value">
+                <a href={`tel:${guide.phone}`} className="text-decoration-none">
+                  {guide.phone}
+                </a>
+              </span>
             </div>
             <div className="guide-info-item">
-              <span className="guide-label">Viaggio:</span>
+              <span className="guide-label">
+                <i className="bi bi-geo-alt-fill me-2"></i>
+                Viaggio:
+              </span>
               <span className="guide-value">
                 {travel ? travel.packageName : "Nessun viaggio associato"}
               </span>
@@ -62,7 +82,8 @@ function GuideDetailPage() {
           </div>
         )}
 
-        <Link to={`/trips/${id}`} className="back-button">
+        <Link to={`/trips/${id}`} className="back-button mt-4 d-inline-block">
+          <i className="bi bi-arrow-left me-2"></i>
           Torna ai dettagli del viaggio
         </Link>
       </div>

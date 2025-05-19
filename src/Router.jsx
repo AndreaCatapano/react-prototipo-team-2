@@ -1,5 +1,11 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+
+// Pagine principali
 import HomePage from "./pages/HomePage";
+import TravelsPage from "./pages/TravelsPage";
+import ContactsPage from "./pages/ContactsPage";
+
+// Pagine di dettaglio
 import TripDetailPage from "./pages/TripDetailPage";
 import GuideDetailPage from "./pages/GuideDetailPage";
 import UserDetailPage from "./pages/UserDetailPage";
@@ -7,21 +13,25 @@ import UserDetailPage from "./pages/UserDetailPage";
 // Componente Router principale dell'app
 function AppRouter() {
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* Pagina iniziale con elenco viaggi */}
-        <Route path="/" element={<HomePage />} />
+    <Routes>
+      {/* Pagina iniziale di benvenuto */}
+      <Route path="/" element={<HomePage />} />
 
-        {/* Pagina di dettaglio viaggio (tramite ID) */}
-        <Route path="/trips/:id" element={<TripDetailPage />} />
+      {/* Pagina con elenco dei viaggi */}
+      <Route path="/travels" element={<TravelsPage />} />
 
-        {/* Pagina di dettaglio guida (tramite ID) */}
-        <Route path="/guides/:id" element={<GuideDetailPage />} />
+      {/* Pagina contatti con recapiti, form e social */}
+      <Route path="/contacts" element={<ContactsPage />} />
 
-        {/* Pagina di dettaglio utente (tramite ID) */}
-        <Route path="/users/:id" element={<UserDetailPage />} />
-      </Routes>
-    </BrowserRouter>
+      {/* Pagina di dettaglio viaggio */}
+      <Route path="/trips/:id" element={<TripDetailPage />} />
+
+      {/* Pagina di dettaglio guida */}
+      <Route path="/guides/:id" element={<GuideDetailPage />} />
+
+      {/* Pagina di dettaglio utente */}
+      <Route path="/users/:id" element={<UserDetailPage />} />
+    </Routes>
   );
 }
 
