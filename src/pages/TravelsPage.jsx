@@ -11,38 +11,40 @@ function parseDate(dateStr) {
 
 // Pagina principale con elenco dei viaggi e filtro
 export default function TravelsPage() {
-  const [currentFilter, setCurrentFilter] = useState("disponibili");
+  const [currentFilter, setCurrentFilter] = useState(""); // inizialmente nessun filtro attivo
 
-  // Aggiorna filtro selezionato
   const handleFilterChange = (filter) => {
     setCurrentFilter(filter);
   };
 
   const today = new Date();
 
-  // Filtraggio dei viaggi in base alla data e al filtro attivo
-  const filteredTravels = travelDataDemo.filter((travel) => {
-    const departureDate = parseDate(travel.departure);
-    const returnDate = parseDate(travel.return);
+  // Filtro dinamico applicato solo se è stato selezionato un filtro
+  const filteredTravels = travelDataDemo
+    .filter((travel) => {
+      const departureDate = parseDate(travel.departure);
+      const returnDate = parseDate(travel.return);
 
-    if (currentFilter === "terminati") {
-      return returnDate < today;
-    }
+      if (currentFilter === "terminati") {
+        return returnDate < today;
+      }
 
-    if (currentFilter === "disponibili") {
-      return today >= departureDate && today <= returnDate;
-    }
+      if (currentFilter === "disponibili") {
+        return today >= departureDate && today <= returnDate;
+      }
 
-    if (currentFilter === "inProgramma") {
-      return departureDate > today;
-    }
+      if (currentFilter === "inProgramma") {
+        return departureDate > today;
+      }
 
-    return true; // fallback
-  });
+      return true; // se nessun filtro è attivo, mostra tutto
+    })
+    // Ordina per data di partenza crescente
+    .sort((a, b) => parseDate(a.departure) - parseDate(b.departure));
 
   return (
     <div className="container-fluid p-4 bg-secondary">
-      <h1 className="text-center mb-5">Our Travel List</h1>
+      <h1 className="text-center text-light mb-5">Our Travel List</h1>
 
       <div className="container">
         {/* Componenti filtri */}
