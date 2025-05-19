@@ -1,62 +1,70 @@
-export const travelDataDemo = [
-    {
-        id: "1",
-        slug: "road-to-naples",
-        packageName: "Road To Naples",
-        destination: "Naples",
-        departure: "20/05/2025",
-        return: "27/05/2025",
-        guide: "Mario Rossi",
-        numberOfParticipants: 15
-    },
-    {
-        id: "2",
-        slug: "discover-sicily",
-        packageName: "Discover Sicily",
-        destination: "Palermo",
-        departure: "17/05/2025",
-        return: "27/05/2025",
-        guide: "Lucia Bianchi",
-        numberOfParticipants: 15
-    },
-    {
-        id: "3",
-        slug: "venetian-escape",
-        packageName: "Venetian Escape",
-        destination: "Venice",
-        departure: "21/05/2025",
-        return: "28/05/2025",
-        guide: "Giovanni Verdi",
-        numberOfParticipants: 12
-    },
-    {
-        id: "4",
-        slug: "florence-art-tour",
-        packageName: "Florence Art Tour",
-        destination: "Florence",
-        departure: "13/05/2025",
-        return: "19/05/2025",
-        guide: "Anna Neri",
-        numberOfParticipants: 15
-    },
-    {
-        id: "5",
-        slug: "milan-shopping-week",
-        packageName: "Milan Shopping Week",
-        destination: "Milan",
-        departure: "15/06/2025",
-        return: "21/06/2025",
-        guide: "Francesca Moretti",
-        numberOfParticipants: 15
-    },
-    {
-        id: "6",
-        slug: "rome-historical-walks",
-        packageName: "Rome Historical Walks",
-        destination: "Rome",
-        departure: "03/01/2025",
-        return: "10/01/2025",
-        guide: "Alessandro Russo",
-        numberOfParticipants: 15
-    }
-]
+const travelDataDemo = [
+  {
+    id: 1,
+    slug: "road-to-naples",
+    packageName: "Road To Naples",
+    destination: "Naples",
+    departure: "20/05/2025",
+    return: "27/05/2025",
+    guide: "Mario Rossi",
+    image: "road-to-naples.jpg",
+    numberOfParticipants: 15,
+  },
+  {
+    id: 2,
+    slug: "discover-sicily",
+    packageName: "Discover Sicily",
+    destination: "Palermo",
+    departure: "17/05/2025",
+    return: "27/05/2025",
+    guide: "Lucia Bianchi",
+    image: "discover-sicily.jpg",
+    numberOfParticipants: 15,
+  },
+  {
+    id: 3,
+    slug: "venetian-escape",
+    packageName: "Venetian Escape",
+    destination: "Venice",
+    departure: "21/05/2025",
+    return: "28/05/2025",
+    guide: "Giovanni Verdi",
+    image: "venetian-escape.jpg",
+    numberOfParticipants: 15,
+  },
+  {
+    id: 4,
+    slug: "florence-art-tour",
+    packageName: "Florence Art Tour",
+    destination: "Florence",
+    departure: "13/05/2025",
+    return: "19/05/2025",
+    guide: "Anna Neri",
+    image: "florence-art-tour.jpg",
+    numberOfParticipants: 15,
+  },
+  {
+    id: 5,
+    slug: "milan-shopping-week",
+    packageName: "Milan Shopping Week",
+    destination: "Milan",
+    departure: "15/06/2025",
+    return: "21/06/2025",
+    guide: "Francesca Moretti",
+    image: "milan-shopping-week.jpg",
+    numberOfParticipants: 15,
+  },
+  {
+    id: 6,
+    slug: "rome-historical-walks",
+    packageName: "Rome Historical Walks",
+    destination: "Rome",
+    departure: "03/01/2025",
+    return: "10/01/2025",
+    guide: "Alessandro Russo",
+    image: "rome-historical-walks.jpg",
+    numberOfParticipants: 15,
+  },
+];
+
+export default travelDataDemo;

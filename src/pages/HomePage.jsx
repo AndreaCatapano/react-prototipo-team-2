@@ -1,38 +1,21 @@
-import TravelCardV1 from "../components/TravelCardV1";
-import TravelCardV2 from "../components/TravelCardV2";
-import TravelCardV3 from "../components/TravelCardV3";
-import { travelDataDemo } from "../data/travelDataDemo";
+import TravelCard from "../components/TravelCard";
+import travelDataDemo from "../data/travelDataDemo.js";
 
 // Pagina principale con elenco dei viaggi in tre versioni
 function HomePage() {
   return (
     <div className="container-fluid p-4 bg-secondary">
-      <h1 className="text-center">Our Travel List</h1>
+      <h1 className="text-center mb-5">Our Travel List</h1>
 
-      <h2>Version 1</h2>
-      <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-        {travelDataDemo.map((travel) => (
-          <TravelCardV1 key={travel.id} data={travel} />
-        ))}
-      </div>
-
-      <hr />
-      <h2>Version 2</h2>
-      <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-        {travelDataDemo.map((travel) => (
-          <TravelCardV2 key={travel.id} data={travel} />
-        ))}
-      </div>
-
-      <hr />
-      <h2>Version 3</h2>
-      <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-        {travelDataDemo.map((travel) => (
-          <TravelCardV3 key={travel.id} data={travel} />
-        ))}
+      <div className="container">
+        <div className="row g-3">
+          {travelDataDemo.map((travel) => (
+            <TravelCard key={travel.id} data={travel} />
+          ))}
+        </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default HomePage;
