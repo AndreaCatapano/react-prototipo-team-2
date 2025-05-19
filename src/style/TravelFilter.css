@@ -1,0 +1,43 @@
+.travel-filters-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.travel-filter-btn {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    margin: 0 0.25rem;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    color: #495057;
+    border: none;
+}
+
+.travel-filter-btn:first-child {
+    margin-left: 0;
+}
+
+.travel-filter-btn:last-child {
+    margin-right: 0;
+}
+
+.travel-filter-btn:hover {
+    background-color: #e9ecef;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.travel-filter-btn.active {
+    background-color: #0d6efd;
+    color: white;
+    box-shadow: 0 4px 8px rgba(13, 110, 253, 0.3);
+}
