@@ -31,7 +31,7 @@ function TravelFilters({ onFilterChange }) {
         }`}
         onClick={() => handleFilterClick("disponibili")}
       >
-        Disponibili
+        In Corso
       </button>
 
       <button

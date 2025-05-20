@@ -46,10 +46,8 @@ export default function TravelsPage() {
       <h1 className="text-center mb-5">Tutti i nostri viaggi</h1>
 
       <div className="container">
-        {/* Componenti filtri */}
         <TravelFilters onFilterChange={handleFilterChange} />
 
-        {/* Lista dei viaggi filtrati */}
         <div className="row g-3">
           {filteredTravels.length > 0 ? (
             filteredTravels.map((travel) => (
