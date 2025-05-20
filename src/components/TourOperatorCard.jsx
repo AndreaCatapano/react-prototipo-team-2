@@ -6,7 +6,7 @@ export function TourOperatorCard({ tripId }) {
     <div className="container py-4 tour-operator-container">
       <div className="tour-operator-grid">
         <Link to={`/guides/${tripId}`} className="tour-operator-link">
-          <h3 className="tour-operator-title">Operatore</h3>
+          <h3 className="tour-operator-title">Accompagnatore</h3>
         </Link>
       </div>
     </div>

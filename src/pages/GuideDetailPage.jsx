@@ -21,22 +21,27 @@ function GuideDetailPage() {
       setGuide(foundGuide);
       setFormData({
         email: foundGuide.email,
-        phone: foundGuide.phone
+        phone: foundGuide.phone,
       });
 
-      const relatedTravel = travelDataDemo.find((t) => t.id === foundGuide.tripId);
+      const relatedTravel = travelDataDemo.find(
+        (t) => t.id === foundGuide.tripId
+      );
       if (relatedTravel) setTravel(relatedTravel);
     }
   }, [id]);
 
   const handleChange = (e) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSavePhone = () => {
     if (guide && formData.phone !== guide.phone) {
       guide.phone = formData.phone;
-      setNotification({ type: "success", message: "Numero aggiornato con successo!" });
+      setNotification({
+        type: "success",
+        message: "Numero aggiornato con successo!",
+      });
     } else {
       setNotification({ type: "danger", message: "Il numero non è cambiato." });
     }
@@ -56,7 +61,9 @@ function GuideDetailPage() {
         <div className="guide-not-found">
           <h2>Guida non trovata</h2>
         </div>
-        <Link to="/" className="back-button mt-3">Torna alla homepage</Link>
+        <Link to="/" className="back-button mt-3">
+          Torna alla homepage
+        </Link>
       </div>
     );
   }
@@ -64,30 +71,51 @@ function GuideDetailPage() {
   return (
     <div className="container py-5">
       <div className="guide-detail-container">
-        <h1 className="guide-title">Dettaglio Operatore</h1>
+        <h1 className="guide-title">Dettaglio Accompagnatore</h1>
 
         {notification && (
-          <div className={`alert alert-${notification.type} text-center`} role="alert">
+          <div
+            className={`alert alert-${notification.type} text-center`}
+            role="alert"
+          >
             {notification.message}
           </div>
         )}
 
         <div className="guide-info-card">
           <div className="guide-info-item">
-            <span className="guide-label"><i className="bi bi-person-fill me-2"></i>Nome:</span>
-            <span className="guide-value">{guide.firstName} {guide.lastName}</span>
+            <span className="guide-label">
+              <i className="bi bi-person-fill me-2"></i>Nome:
+            </span>
+            <span className="guide-value">
+              {guide.firstName} {guide.lastName}
+            </span>
           </div>
 
           <div className="guide-info-item">
-            <span className="guide-label"><i className="bi bi-envelope-fill me-2"></i>Email:</span>
-            <a href={`mailto:${formData.email}`} className="guide-value text-decoration-none">{formData.email}</a>
+            <span className="guide-label">
+              <i className="bi bi-envelope-fill me-2"></i>Email:
+            </span>
+            <a
+              href={`mailto:${formData.email}`}
+              className="guide-value text-decoration-none"
+            >
+              {formData.email}
+            </a>
           </div>
 
           <div className="guide-info-item d-flex align-items-center justify-content-between">
             <div className="flex-grow-1">
-              <span className="guide-label"><i className="bi bi-telephone-fill me-2"></i>Telefono:</span>
+              <span className="guide-label">
+                <i className="bi bi-telephone-fill me-2"></i>Telefono:
+              </span>
               {!isEditingPhone ? (
-                <a href={`tel:${formData.phone}`} className="guide-value text-decoration-none">{formData.phone}</a>
+                <a
+                  href={`tel:${formData.phone}`}
+                  className="guide-value text-decoration-none"
+                >
+                  {formData.phone}
+                </a>
               ) : (
                 <input
                   type="tel"
@@ -100,23 +128,35 @@ function GuideDetailPage() {
               )}
             </div>
             {!isEditingPhone ? (
-              <button className="btn btn-outline-secondary ms-2" onClick={() => setIsEditingPhone(true)}>
+              <button
+                className="btn btn-outline-secondary ms-2"
+                onClick={() => setIsEditingPhone(true)}
+              >
                 <i className="bi bi-pencil-fill"></i>
               </button>
             ) : (
-              <button className="btn btn-success ms-2" onClick={handleSavePhone}>Salva</button>
+              <button
+                className="btn btn-success ms-2"
+                onClick={handleSavePhone}
+              >
+                Salva
+              </button>
             )}
           </div>
 
           <div className="guide-info-item">
-            <span className="guide-label"><i className="bi bi-geo-alt-fill me-2"></i>Viaggio:</span>
+            <span className="guide-label">
+              <i className="bi bi-geo-alt-fill me-2"></i>Viaggio:
+            </span>
             <span className="guide-value">
               {travel ? travel.packageName : "Nessun viaggio associato"}
             </span>
           </div>
 
           <div className="text-center mt-4">
-            <Link to={`/trips/${guide.tripId}`} className="back-button">Torna ai dettagli del viaggio</Link>
+            <Link to={`/trips/${guide.tripId}`} className="back-button">
+              Torna ai dettagli del viaggio
+            </Link>
           </div>
         </div>
       </div>
