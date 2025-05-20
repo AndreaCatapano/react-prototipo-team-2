@@ -12,72 +12,78 @@ export default function ContactsPage() {
   };
 
   return (
-    <div className="container min-vh-100 py-5">
-      <h1 className="text-center mb-4">Contattaci</h1>
+    <div className="container-fluid d-flex flex-column min-vh-100 p-4 overflow-hidden bg-light">
+      {/* Header */}
+      <header className="text-center">
+        <h1 className="mb-4">Contattaci</h1>
+      </header>
 
-      {/* Contatti aziendali */}
-      <div className="mb-5 text-center">
-        <p className="mb-1 fw-bold">BooRoad Travel Agency</p>
-        <p className="mb-1">
-          <i className="bi bi-telephone-fill me-2"></i>
-          <a href="tel:+393331234567" className="text-decoration-none">
-            +39 333 123 4567
-          </a>
-        </p>
-        <p className="mb-3">
-          <i className="bi bi-envelope-fill me-2"></i>
-          <a href="mailto:info@booroad.com" className="text-decoration-none">
-            info@booroad.com
-          </a>
-        </p>
-      </div>
-
-      {/* Form contatto */}
-      {formSubmitted ? (
-        <div className="alert alert-success text-center">
-          ✅ Grazie per averci contattato! Ti risponderemo il prima possibile.
+      {/* Main content */}
+      <main className="flex-grow-1 d-flex flex-column align-items-center justify-content-center">
+        {/* Contatti aziendali */}
+        <div className="mb-4 text-center">
+          <p className="fw-bold">BooRoad Travel Agency</p>
+          <p className="mb-1">
+            <i className="bi bi-telephone-fill me-2"></i>
+            <a href="tel:+393331234567" className="text-decoration-none">
+              +39 333 123 4567
+            </a>
+          </p>
+          <p className="mb-3">
+            <i className="bi bi-envelope-fill me-2"></i>
+            <a href="mailto:info@booroad.com" className="text-decoration-none">
+              info@booroad.com
+            </a>
+          </p>
         </div>
-      ) : (
-        <form onSubmit={handleSubmit} className="contact-form mx-auto">
-          <div className="row mb-3">
-            <div className="col-md-6">
-              <input type="text" className="form-control" placeholder="Nome" required />
+
+        {/* Form contatto */}
+        {formSubmitted ? (
+          <div className="alert alert-success text-center w-100 text-wrap">
+            ✅ Grazie per averci contattato! Ti risponderemo il prima possibile.
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="contact-form w-100">
+            <div className="row mb-3">
+              <div className="col-md-6">
+                <input type="text" className="form-control" placeholder="Nome" required />
+              </div>
+              <div className="col-md-6">
+                <input type="text" className="form-control" placeholder="Cognome" required />
+              </div>
             </div>
-            <div className="col-md-6">
-              <input type="text" className="form-control" placeholder="Cognome" required />
+
+            <div className="row mb-3">
+              <div className="col-md-6">
+                <input type="email" className="form-control" placeholder="Email" required />
+              </div>
+              <div className="col-md-6">
+                <input type="tel" className="form-control" placeholder="Telefono" required />
+              </div>
             </div>
-          </div>
 
-          <div className="row mb-3">
-            <div className="col-md-6">
-              <input type="email" className="form-control" placeholder="Email" required />
+            <div className="mb-3">
+              <textarea className="form-control" placeholder="Messaggio" rows="4" required></textarea>
             </div>
-            <div className="col-md-6">
-              <input type="tel" className="form-control" placeholder="Telefono" required />
+
+            <div className="form-check mb-3">
+              <input className="form-check-input" type="checkbox" id="gdprCheck" required />
+              <label className="form-check-label" htmlFor="gdprCheck">
+                Ho letto e accettato la <Link to="/privacy">Privacy Policy</Link>
+              </label>
             </div>
-          </div>
 
-          <div className="mb-3">
-            <textarea className="form-control" placeholder="Messaggio" rows="4" required></textarea>
-          </div>
+            <div className="text-center">
+              <button type="submit" className="btn btn-primary px-4">
+                Invia
+              </button>
+            </div>
+          </form>
+        )}
+      </main>
 
-          <div className="form-check mb-3">
-            <input className="form-check-input" type="checkbox" id="gdprCheck" required />
-            <label className="form-check-label" htmlFor="gdprCheck">
-              Ho letto e accettato la <Link to="/privacy">Privacy Policy</Link>
-            </label>
-          </div>
-
-          <div className="text-center">
-            <button type="submit" className="btn btn-primary px-4">
-              Invia
-            </button>
-          </div>
-        </form>
-      )}
-
-      {/* Social media - in basso a destra */}
-      <div className="text-end mt-5">
+      {/* Footer social */}
+      <footer className="text-end">
         <div className="social-icons d-flex justify-content-end gap-3">
           <a href="https://facebook.com" target="_blank" rel="noreferrer">
             <i className="bi bi-facebook fs-4"></i>
@@ -92,7 +98,7 @@ export default function ContactsPage() {
             <i className="bi bi-youtube fs-4"></i>
           </a>
         </div>
-      </div>
+      </footer>
     </div>
   );
 }

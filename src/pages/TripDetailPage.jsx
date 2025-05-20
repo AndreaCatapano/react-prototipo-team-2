@@ -1,10 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-
 import { TourOperatorCard } from "../components/TourOperatorCard.jsx";
 import AccordionTrip from "../components/AccordionTrip.jsx";
 import UserCard from "../components/UserCard.jsx";
-
 import userDataDemo from "../data/userDataDemo";
 import travelDataDemo from "../data/travelDataDemo";
 import "../style/TravelDetailPage.css"; // ✅ Nome corretto del file CSS
