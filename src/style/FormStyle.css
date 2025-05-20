@@ -1,11 +1,12 @@
-/* Stile del form contatti */
-
+/* Contenitore form con altezza adattabile */
 .contact-form {
   max-width: 720px;
   padding: 2rem;
   background-color: #ffffff;
   border-radius: 0.5rem;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  flex: 0 1 auto;
 }
 
 /* Input e textarea */

@@ -1,87 +1,97 @@
-/* GuideDetail.css */
-
 .user-detail-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .user-title {
-    color: #0d6efd;
-    border-bottom: 2px solid #dee2e6;
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
-    font-weight: 600;
+  color: #0d6efd;
+  border-bottom: 2px solid #dee2e6;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 .user-info-card {
-    background-color: white;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-left: 4px solid #0d6efd;
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #0d6efd;
 }
 
 .user-info-item {
-    margin-bottom: 1rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .user-info-item:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .user-label {
-    font-weight: 600;
-    color: #495057;
-    display: inline-block;
-    width: 150px;
+  font-weight: 600;
+  color: #495057;
+  display: inline-block;
+  width: 180px;
 }
 
 .user-value {
-    color: #212529;
-    font-weight: 500;
+  color: #0d6efd;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.user-value:hover {
+  color: #084298;
+  text-decoration: underline;
+}
+
+.user-fiscal-code {
+  color: #212529; /* nero */
+  font-weight: 500;
 }
 
 .user-not-found {
-    padding: 2rem;
-    text-align: center;
-    background-color: #f8d7da;
-    color: #721c24;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
 }
 
 .back-button {
-    background-color: #6c757d;
-    border: none;
-    padding: 0.5rem 1.5rem;
-    color: white;
-    border-radius: 4px;
-    font-weight: 500;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.2s;
+  background-color: #6c757d;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s;
 }
 
 .back-button:hover {
-    background-color: #5a6268;
-    text-decoration: none;
-    color: white;
+  background-color: #5a6268;
+  color: white;
+  text-decoration: none;
 }
 
 @media (max-width: 768px) {
-    .user-detail-container {
-        padding: 1rem;
-    }
+  .user-detail-container {
+    padding: 1rem;
+  }
 
-    .user-label {
-        display: block;
-        width: 100%;
-        margin-bottom: 0.25rem;
-    }
+  .user-label {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
 }
