@@ -50,7 +50,10 @@ function GuideDetailPage() {
                 Email:
               </span>
               <span className="guide-value">
-                <a href={`mailto:${guide.email}`} className="text-decoration-none">
+                <a
+                  href={`mailto:${guide.email}`}
+                  className="text-decoration-none"
+                >
                   {guide.email}
                 </a>
               </span>
@@ -82,10 +85,16 @@ function GuideDetailPage() {
           </div>
         )}
 
-        <Link to={`/trips/${id}`} className="back-button mt-4 d-inline-block">
-          <i className="bi bi-arrow-left me-2"></i>
-          Torna ai dettagli del viaggio
-        </Link>
+   
+        {travel && (
+          <Link
+            to={`/trips/${travel.slug}`}
+            className="back-button mt-4 d-inline-block"
+          >
+            <i className="bi bi-arrow-left me-2"></i>
+            Torna ai dettagli del viaggio
+          </Link>
+        )}
       </div>
     </div>
   );

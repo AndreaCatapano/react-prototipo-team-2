@@ -24,7 +24,7 @@ function AppRouter() {
       <Route path="/contacts" element={<ContactsPage />} />
 
       {/* Pagina di dettaglio viaggio */}
-      <Route path="/trips/:id" element={<TripDetailPage />} />
+      <Route path="/trips/:slug" element={<TripDetailPage />} />
 
       {/* Pagina di dettaglio guida */}
       <Route path="/guides/:id" element={<GuideDetailPage />} />

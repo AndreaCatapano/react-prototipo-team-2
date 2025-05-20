@@ -1,11 +1,15 @@
 import { useParams, Link } from "react-router-dom";
 import userDataDemo from "../data/userDataDemo";
+import travelDataDemo from "../data/travelDataDemo";
 import "../style/UserDetailPage.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function UserDetailPage() {
   const { id } = useParams();
   const user = userDataDemo.find((u) => u.id === parseInt(id));
+
+  // Trova il viaggio associato all'utente per ottenere lo slug
+  const travel = user ? travelDataDemo.find((t) => t.id === user.tripId) : null;
 
   if (!user) {
     return (
@@ -20,19 +24,24 @@ export default function UserDetailPage() {
     );
   }
 
-  const { firstName, lastName, phone, email, fiscalCode, tripId } = user;
+  const { firstName, lastName, phone, email, fiscalCode } = user;
 
   return (
     <div className="container py-5">
       <div className="user-detail-container">
-        <h1 className="user-title">{firstName} {lastName}</h1>
+        <h1 className="user-title">
+          {firstName} {lastName}
+        </h1>
 
         <div className="user-info-card">
           <div className="user-info-item">
             <span className="user-label">
               <i className="bi bi-envelope-fill me-2"></i>Email:
             </span>
-            <a href={`mailto:${email}`} className="user-value text-decoration-none">
+            <a
+              href={`mailto:${email}`}
+              className="user-value text-decoration-none"
+            >
               {email}
             </a>
           </div>
@@ -41,7 +50,10 @@ export default function UserDetailPage() {
             <span className="user-label">
               <i className="bi bi-telephone-fill me-2"></i>Telefono:
             </span>
-            <a href={`tel:${phone}`} className="user-value text-decoration-none">
+            <a
+              href={`tel:${phone}`}
+              className="user-value text-decoration-none"
+            >
               {phone}
             </a>
           </div>
@@ -54,9 +66,12 @@ export default function UserDetailPage() {
           </div>
         </div>
 
-        <Link to={`/trips/${tripId}`} className="back-button">
-          Torna ai dettagli del viaggio
-        </Link>
+        {/* Utilizzo lo slug del viaggio invece dell'ID numerico */}
+        {travel && (
+          <Link to={`/trips/${travel.slug}`} className="back-button">
+            Torna ai dettagli del viaggio
+          </Link>
+        )}
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ export default function TravelCard({ data }) {
   return (
     <div className="container my-3">
       <div className="col-12">
-        <Link to={`/trips/${data.id}`} className="text-decoration-none">
+        <Link to={`/trips/${data.slug}`} className="text-decoration-none">
           <div className="travel-card">
             <div className="travel-card-image-container ratio ratio-16x9">
               <img

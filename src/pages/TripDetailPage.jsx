@@ -22,11 +22,14 @@ function getTripStatus(departure, returnDate) {
 }
 
 function TripDetailPage() {
-  const { id } = useParams();
+  const { slug } = useParams();
 
   const [user, setUser] = useState(userDataDemo);
   const [findUser, setFindUser] = useState(user);
   const [userSearch, setUserSearch] = useState("");
+
+  const currentTrip = travelDataDemo.find((trip) => trip.slug === slug);
+  const tripId = currentTrip ? currentTrip.id : null;
 
   useEffect(() => {
     let filteredUser = user;
@@ -43,10 +46,8 @@ function TripDetailPage() {
   }, [userSearch]);
 
   // Partecipanti al viaggio
-  const tripUsers = findUser.filter((user) => user.tripId == id);
+  const tripUsers = findUser.filter((user) => user.tripId === tripId);
 
-  // Trova i dati del viaggio corrente
-  const currentTrip = travelDataDemo.find((trip) => trip.id == id);
   const status = currentTrip
     ? getTripStatus(currentTrip.departure, currentTrip.return)
     : null;
@@ -57,14 +58,27 @@ function TripDetailPage() {
     "In Programma": "bg-warning text-dark",
   }[status];
 
+  if (!currentTrip) {
+    return (
+      <div className="container py-5 text-center">
+        <div className="trip-not-found">
+          <h2>Viaggio non trovato</h2>
+        </div>
+        <Link to="/" className="back-button mt-3">
+          Torna alla homepage
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <>
       <section id="tour-operator-section">
-        <TourOperatorCard tripId={id} />
+        <TourOperatorCard tripId={currentTrip.id} />
       </section>
 
       <div className="container py-4">
-        <AccordionTrip dataId={id} />
+        <AccordionTrip dataId={currentTrip.id} />
 
         {status && (
           <div className="text-end mb-4">
