@@ -3,7 +3,7 @@ import "../style/TravelCard.css";
 
 export default function TravelCard({ data }) {
   return (
-    <div className="container mb-3">
+    <div className="container my-3">
       <div className="col-12">
         <Link to={`/trips/${data.id}`} className="text-decoration-none">
           <div className="travel-card">

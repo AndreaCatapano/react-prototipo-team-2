@@ -26,15 +26,16 @@ function TripDetailPage() {
 
   const [user, setUser] = useState(userDataDemo);
   const [findUser, setFindUser] = useState(user);
-  const [userSearch, setUserSearch] = useState('');
+  const [userSearch, setUserSearch] = useState("");
 
   useEffect(() => {
     let filteredUser = user;
 
-    if (userSearch !== '') {
-      filteredUser = filteredUser.filter(user =>
-        user.firstName.toLowerCase().includes(userSearch.toLowerCase()) ||
-        user.lastName.toLowerCase().includes(userSearch.toLowerCase())
+    if (userSearch !== "") {
+      filteredUser = filteredUser.filter(
+        (user) =>
+          user.firstName.toLowerCase().includes(userSearch.toLowerCase()) ||
+          user.lastName.toLowerCase().includes(userSearch.toLowerCase())
       );
     }
 
@@ -42,17 +43,17 @@ function TripDetailPage() {
   }, [userSearch]);
 
   // Partecipanti al viaggio
-  const tripUsers = findUser.filter(user => user.tripId == id);
+  const tripUsers = findUser.filter((user) => user.tripId == id);
 
   // Trova i dati del viaggio corrente
-  const currentTrip = travelDataDemo.find(trip => trip.id == id);
+  const currentTrip = travelDataDemo.find((trip) => trip.id == id);
   const status = currentTrip
     ? getTripStatus(currentTrip.departure, currentTrip.return)
     : null;
 
   const badgeClass = {
     "In Corso": "bg-success",
-    "Terminato": "bg-danger",
+    Terminato: "bg-danger",
     "In Programma": "bg-warning text-dark",
   }[status];
 
@@ -65,7 +66,6 @@ function TripDetailPage() {
       <div className="container py-4">
         <AccordionTrip dataId={id} />
 
-        {/* Badge stato viaggio */}
         {status && (
           <div className="text-end mb-4">
             <span className={`badge ${badgeClass} fs-6 px-3 py-2`}>
@@ -82,13 +82,13 @@ function TripDetailPage() {
             type="search"
             placeholder="Search User"
             value={userSearch}
-            onChange={e => setUserSearch(e.target.value)}
+            onChange={(e) => setUserSearch(e.target.value)}
           />
         </div>
 
         <section className="container text-center">
           <div className="row row-cols-3 g-3">
-            {tripUsers.map(user => (
+            {tripUsers.map((user) => (
               <UserCard key={user.id} user={user} />
             ))}
           </div>
