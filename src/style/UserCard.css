@@ -1,0 +1,40 @@
+.user-card-container {
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.user-card-grid {
+    height: 100%;
+    display: grid;
+    padding: 1rem;
+}
+
+.user-card-link {
+    background-color: white;
+    border-radius: 8px;
+    color: #0d6efd;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(13, 110, 253, 0.1);
+    height: 100%;
+    text-decoration: none;
+    padding: 1rem;
+}
+
+.user-card-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+    color: #0a58ca;
+    border-color: rgba(13, 110, 253, 0.2);
+}
+
+.user-card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}

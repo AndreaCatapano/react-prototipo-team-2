@@ -149,7 +149,7 @@ const demoUsers = [
     lastName: "De Luca",
     email: "serena.de luca17@example.com",
     phone: "+39 329 6393197",
-    fiscalCode: "DE SER80A17H501Z",
+    fiscalCode: "DESER80A17H501Z",
     tripId: 2,
   },
   {
@@ -212,7 +212,7 @@ const demoUsers = [
     lastName: "De Luca",
     email: "giorgio.de luca24@example.com",
     phone: "+39 348 1355132",
-    fiscalCode: "DE GIO80A24H501Z",
+    fiscalCode: "DEGIO80A24H501Z",
     tripId: 2,
   },
   {
@@ -248,7 +248,7 @@ const demoUsers = [
     lastName: "De Luca",
     email: "martina.de luca28@example.com",
     phone: "+39 374 2065978",
-    fiscalCode: "DE MAR80A28H501Z",
+    fiscalCode: "DEMAR80A28H501Z",
     tripId: 2,
   },
   {
@@ -365,7 +365,7 @@ const demoUsers = [
     lastName: "De Luca",
     email: "beatrice.de luca41@example.com",
     phone: "+39 396 1542531",
-    fiscalCode: "DE BEA80A41H501Z",
+    fiscalCode: "DEBEA80A41H501Z",
     tripId: 3,
   },
   {
@@ -383,7 +383,7 @@ const demoUsers = [
     lastName: "De Luca",
     email: "nicola.de luca43@example.com",
     phone: "+39 354 8841119",
-    fiscalCode: "DE NIC80A43H501Z",
+    fiscalCode: "DENIC80A43H501Z",
     tripId: 3,
   },
   {
@@ -428,7 +428,7 @@ const demoUsers = [
     lastName: "De Luca",
     email: "davide.de luca48@example.com",
     phone: "+39 375 9661178",
-    fiscalCode: "DE DAV80A48H501Z",
+    fiscalCode: "DEDAV80A48H501Z",
     tripId: 4,
   },
   {
@@ -707,7 +707,7 @@ const demoUsers = [
     lastName: "De Luca",
     email: "nicola.de luca79@example.com",
     phone: "+39 336 4085784",
-    fiscalCode: "DE NIC80A79H501Z",
+    fiscalCode: "DENIC80A79H501Z",
     tripId: 6,
   },
   {

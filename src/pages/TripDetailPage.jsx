@@ -5,7 +5,7 @@ import AccordionTrip from "../components/AccordionTrip.jsx";
 import UserCard from "../components/UserCard.jsx";
 import userDataDemo from "../data/userDataDemo";
 import travelDataDemo from "../data/travelDataDemo";
-import "../style/TravelDetailPage.css"; // ✅ Nome corretto del file CSS
+import "../style/TravelDetailPage.css";
 
 // Funzione per determinare lo stato del viaggio
 function getTripStatus(departure, returnDate) {
@@ -26,15 +26,16 @@ function TripDetailPage() {
 
   const [user, setUser] = useState(userDataDemo);
   const [findUser, setFindUser] = useState(user);
-  const [userSearch, setUserSearch] = useState('');
+  const [userSearch, setUserSearch] = useState("");
 
   useEffect(() => {
     let filteredUser = user;
 
-    if (userSearch !== '') {
-      filteredUser = filteredUser.filter(user =>
-        user.firstName.toLowerCase().includes(userSearch.toLowerCase()) ||
-        user.lastName.toLowerCase().includes(userSearch.toLowerCase())
+    if (userSearch !== "") {
+      filteredUser = filteredUser.filter(
+        (user) =>
+          user.firstName.toLowerCase().includes(userSearch.toLowerCase()) ||
+          user.lastName.toLowerCase().includes(userSearch.toLowerCase())
       );
     }
 
@@ -42,30 +43,34 @@ function TripDetailPage() {
   }, [userSearch]);
 
   // Partecipanti al viaggio
-  const tripUsers = findUser.filter(user => user.tripId == id);
+  const tripUsers = findUser.filter((user) => user.tripId == id);
 
-  // Trova i dati del viaggio corrente
-  const currentTrip = travelDataDemo.find(trip => trip.id == id);
+  // Dati viaggio
+  const currentTrip = travelDataDemo.find((trip) => trip.id == id);
   const status = currentTrip
     ? getTripStatus(currentTrip.departure, currentTrip.return)
     : null;
 
   const badgeClass = {
     "In Corso": "bg-success",
-    "Terminato": "bg-danger",
+    Terminato: "bg-danger",
     "In Programma": "bg-warning text-dark",
   }[status];
 
   return (
     <>
+      {/* Accordion: info viaggio */}
+      <div className="container py-4">
+        <AccordionTrip dataId={id} />
+      </div>
+
+      {/* Tour operator */}
       <section id="tour-operator-section">
         <TourOperatorCard tripId={id} />
       </section>
 
+      {/* Partecipanti + Stato */}
       <div className="container py-4">
-        <AccordionTrip dataId={id} />
-
-        {/* Badge stato viaggio */}
         {status && (
           <div className="text-end mb-4">
             <span className={`badge ${badgeClass} fs-6 px-3 py-2`}>
@@ -76,27 +81,32 @@ function TripDetailPage() {
 
         <h2 className="text-center mb-4">Partecipanti</h2>
 
-        <div className="container">
+        {/* Searchbar */}
+        <div className="search-container">
           <input
-            className="form-control me-2 mb-4"
+            className="form-control"
             type="search"
             placeholder="Search User"
             value={userSearch}
-            onChange={e => setUserSearch(e.target.value)}
+            onChange={(e) => setUserSearch(e.target.value)}
           />
         </div>
 
-        <section className="container text-center">
-          <div className="row row-cols-3 g-3">
-            {tripUsers.map(user => (
+        {/* User Cards */}
+        <section className="text-center">
+          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+            {tripUsers.map((user) => (
               <UserCard key={user.id} user={user} />
             ))}
           </div>
         </section>
 
-        <Link to="/" className="btn btn-secondary mt-3">
-          Torna alla homepage
-        </Link>
+        {/* Back Button Centered */}
+        <div className="d-flex justify-content-center mt-4">
+          <Link to="/" className="btn btn-secondary">
+            Torna alla homepage
+          </Link>
+        </div>
       </div>
     </>
   );

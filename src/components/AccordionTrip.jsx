@@ -14,8 +14,22 @@ export default function AccordioTrip({ dataId }) {
                     borderRadius: "10px"
                 }}>
 
-                <h2 className="accordion-header" style={{ backgroundColor: "rgba(0, 0, 0, 0.3)"}}>
-                    <button className="accordion-button collapsed fs-4 text-white bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTrip" aria-expanded="false" aria-controls="collapseTrip">
+                <h2 className="accordion-header" 
+                    style={{ 
+                        backgroundColor: "rgba(0, 0, 0, 0.3)",
+                        borderTopLeftRadius: "10px",
+                        borderTopRightRadius: "10px"
+                        }}>
+                    <button className="accordion-button collapsed fs-4 text-white bg-transparent" 
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseTrip"
+                            aria-expanded="false"
+                            aria-controls="collapseTrip"
+                            style={{
+                                boxShadow: "none",
+                                outline: "none"
+                            }}>
                         <strong>{currentTrip.packageName}</strong>
                     </button>
                 </h2>

@@ -30,7 +30,7 @@ const Header = () => {
             </li>
             <li className="nav-item p-3">
               <Link className="nav-link underline-hover" to="/travels">
-                Viaggi
+                Storico Viaggi
               </Link>
             </li>
             <li className="nav-item p-3">
