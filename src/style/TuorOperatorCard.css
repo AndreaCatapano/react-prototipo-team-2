@@ -1,0 +1,40 @@
+.tour-operator-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.tour-operator-grid {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.tour-operator-link {
+    background-color: #0d6efd;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(13, 110, 253, 0.1);
+    text-decoration: none;
+}
+
+.tour-operator-link:hover {
+    background-color: #0a58ca;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tour-operator-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
