@@ -25,7 +25,7 @@ export default function HomePage() {
         <div className="row g-3">
           {availableTravels.length > 0 ? (
             availableTravels.map((travel) => (
-              <div className="col-12 col-sm-6 col-lg-4" key={travel.id}>
+              <div className="col-12" key={travel.id}>
                 <TravelCard data={travel} />
               </div>
             ))
